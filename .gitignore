@@ -1,0 +1,9 @@
+.venv/
+__pycache__/
+.pytest_cache/
+*.egg-info/
+data/
+outputs/
+results/
+.DS_Store
+.artifact-build/

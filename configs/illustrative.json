@@ -1,0 +1,14 @@
+{
+  "origin": "Explicit illustrative assumptions, not calibrated company or paper parameters",
+  "km_per_coordinate_unit": 0.05,
+  "distance_convention": "Euclidean distance, unrounded, multiplied by declared scale",
+  "emissions_boundary": "Transport combustion CO2 only; fixed consumption; no load dependence",
+  "cost_unit": "cost units, not a named currency; per-distance cost includes fuel",
+  "vehicle_capacity_unit": "product units",
+  "fuel_consumption_unit": "litres/km",
+  "emission_factor_unit": "kg CO2/litre",
+  "vehicles": [
+    {"id": "Compact", "capacity": 150, "cost_per_distance": 1.0, "fuel_l_per_km": 0.10, "kg_co2_per_l": 2.68, "dispatch_cost": 2.0},
+    {"id": "Truck", "capacity": 289, "cost_per_distance": 1.5, "fuel_l_per_km": 0.20, "kg_co2_per_l": 2.68, "dispatch_cost": 3.0}
+  ]
+}

@@ -1,0 +1,27 @@
+[
+  {
+    "path": "data/raw/m5/calendar.csv",
+    "bytes": 103469,
+    "sha256": "d12b5914ef03e66649adf5dd9e996e6602251c22b7a6af8f1f7e3aa12f8860f5"
+  },
+  {
+    "path": "data/raw/m5/sales_train_validation.csv",
+    "bytes": 120007726,
+    "sha256": "f368e66ed1dbecb48b2cc8fc589bf68b3deddbbb36bf5c88b4d6d0a09b9b6724"
+  },
+  {
+    "path": "data/raw/rairo/README.md",
+    "bytes": 232,
+    "sha256": "97db5a1a4ce45518c5de5c5f45ab618abebe0de9d68d5e5e5ea37f6c6711c68b"
+  },
+  {
+    "path": "data/raw/rairo/instances.zip",
+    "bytes": 109211,
+    "sha256": "eac804aa022c5825f55b01e5b3df4d962f5ce869e1f25071d09e8cd5b3bc1e36"
+  },
+  {
+    "path": "data/raw/rairo/readme.doc",
+    "bytes": 20480,
+    "sha256": "693b6f5086014ef00a3c58f5e8fee3a09c475b33657b1485f711b2c52f3b1d70"
+  }
+]
