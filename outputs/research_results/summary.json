@@ -1,0 +1,77 @@
+{
+  "status": "validated conditional scenario benchmark",
+  "database_sha256": "d312b55576c45c7e71743af89e1fc7836632a913213c6051ed7023d6ba9b8300",
+  "built_utc": "2026-11-10T13:17:21.511495+00:00",
+  "checks": {
+    "baseline_carbon_matches_database": true,
+    "baseline_cost_matches_database": true,
+    "thermal_balance": true,
+    "temperature_bounds": true,
+    "equal_terminal_temperatures": true,
+    "same_stops": true,
+    "capacity": true,
+    "truck_windows": true,
+    "same_inventory_and_service": true,
+    "combined_cost_nonincreasing": true,
+    "combined_carbon_nonincreasing": true
+  },
+  "headline": {
+    "baseline": {
+      "total_kgco2e": 571432.2615967486,
+      "operating_cost_cu": 794591.8428023282,
+      "carbon_saved_kg": 0.0,
+      "cost_saved_cu": 0.0,
+      "storage_kgco2": 184712.2767226569,
+      "transport_kgco2": 335452.06525720697,
+      "energy_kwh": 918088.9014715971,
+      "distance_km": 350266.30828,
+      "carbon_reduction_pct": 0.0,
+      "cost_reduction_pct": 0.0
+    },
+    "transport": {
+      "total_kgco2e": 549807.7206572484,
+      "operating_cost_cu": 768176.3740484111,
+      "carbon_saved_kg": 21624.54093950019,
+      "cost_saved_cu": 26415.468753917077,
+      "storage_kgco2": 184706.4149200564,
+      "transport_kgco2": 313833.3861203073,
+      "energy_kwh": 918086.1604962359,
+      "distance_km": 321605.16403000004,
+      "carbon_reduction_pct": 3.784270226373798,
+      "cost_reduction_pct": 3.3244072404212304
+    },
+    "storage": {
+      "total_kgco2e": 541608.9423684115,
+      "operating_cost_cu": 786838.0367107884,
+      "carbon_saved_kg": 29823.319228337106,
+      "cost_saved_cu": 7753.80609153985,
+      "storage_kgco2": 154888.95749431982,
+      "transport_kgco2": 335452.06525720697,
+      "energy_kwh": 911467.1651013863,
+      "distance_km": 350266.30828,
+      "carbon_reduction_pct": 5.21904716142593,
+      "cost_reduction_pct": 0.9758225133792088
+    },
+    "combined": {
+      "total_kgco2e": 519985.26068206265,
+      "operating_cost_cu": 760427.7252582039,
+      "carbon_saved_kg": 51447.00091468593,
+      "cost_saved_cu": 34164.117544124296,
+      "storage_kgco2": 154883.95494487067,
+      "transport_kgco2": 313833.3861203073,
+      "energy_kwh": 911464.4078390014,
+      "distance_km": 321605.16403000004,
+      "carbon_reduction_pct": 9.003167019469288,
+      "cost_reduction_pct": 4.29958070342579
+    }
+  },
+  "days": 365,
+  "months": 12,
+  "algorithms": [
+    "Fuel-aware first-improvement 2-opt within same-type stop blocks, fixed truck assignments",
+    "Daily linear programming via SciPy HiGHS; two zones, temperature balance, power bounds, electricity-cost cap, identical terminal temperatures"
+  ],
+  "evidence": "Perfect information about daily heat load, carbon and tariffs. Synthetic integration, not an operational forecast or measured reduction.",
+  "fixed_factors": "Orders, inventory, replenishment, supplier trips, leakage, fans/lights/defrost and spoilage fixed across policies. Only routing and compressor schedules optimised.",
+  "scope": "Electricity and diesel combustion CO2 plus assumed R744 leakage; partial GHG inventory. CU is fictional; capital/implementation costs excluded."
+}

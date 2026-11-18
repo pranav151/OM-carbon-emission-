@@ -1,0 +1,508 @@
+{
+  "scenario_id": "virtual_cold_chain_v1",
+  "scenario_months": 12,
+  "scenario_days": 365,
+  "tables": [
+    {
+      "table_name": "sources",
+      "rows": 8,
+      "columns": 6,
+      "grain": "one source",
+      "provenance": "metadata",
+      "csv_file": "csv/sources.csv"
+    },
+    {
+      "table_name": "source_files",
+      "rows": 38,
+      "columns": 6,
+      "grain": "one original file",
+      "provenance": "metadata",
+      "csv_file": "csv/source_files.csv"
+    },
+    {
+      "table_name": "reference_factors",
+      "rows": 2,
+      "columns": 6,
+      "grain": "one factor",
+      "provenance": "published_reference",
+      "csv_file": "csv/reference_factors.csv"
+    },
+    {
+      "table_name": "vtt_power_observations",
+      "rows": 73702,
+      "columns": 19,
+      "grain": "source file \u00d7 timestamp; alternatives at 15/60min",
+      "provenance": "mixed; see field_dictionary",
+      "csv_file": "csv/vtt_power_observations.csv"
+    },
+    {
+      "table_name": "multipack_measurements",
+      "rows": 8634,
+      "columns": 13,
+      "grain": "original source row, selected standardized fields",
+      "provenance": "mixed; see field_dictionary",
+      "csv_file": "csv/multipack_measurements.csv"
+    },
+    {
+      "table_name": "ornl_minute_measurements",
+      "rows": 15840,
+      "columns": 23,
+      "grain": "experiment \u00d7 source minute",
+      "provenance": "mixed; see field_dictionary",
+      "csv_file": "csv/ornl_minute_measurements.csv"
+    },
+    {
+      "table_name": "logistics_nodes",
+      "rows": 270,
+      "columns": 12,
+      "grain": "case \u00d7 node",
+      "provenance": "mixed; see field_dictionary",
+      "csv_file": "csv/logistics_nodes.csv"
+    },
+    {
+      "table_name": "logistics_edges",
+      "rows": 19250,
+      "columns": 6,
+      "grain": "case \u00d7 ordered node pair",
+      "provenance": "provider_calculated_road_network",
+      "csv_file": "csv/logistics_edges.csv"
+    },
+    {
+      "table_name": "source_coverage",
+      "rows": 25,
+      "columns": 6,
+      "grain": "source file",
+      "provenance": "metadata",
+      "csv_file": "csv/source_coverage.csv"
+    },
+    {
+      "table_name": "scenarios",
+      "rows": 1,
+      "columns": 8,
+      "grain": "one scenario",
+      "provenance": "metadata",
+      "csv_file": "csv/scenarios.csv"
+    },
+    {
+      "table_name": "scenario_parameters",
+      "rows": 38,
+      "columns": 4,
+      "grain": "one editable input",
+      "provenance": "synthetic_assumption",
+      "csv_file": "csv/scenario_parameters.csv"
+    },
+    {
+      "table_name": "cold_zones",
+      "rows": 2,
+      "columns": 14,
+      "grain": "one virtual zone",
+      "provenance": "synthetic_assumption",
+      "csv_file": "csv/cold_zones.csv"
+    },
+    {
+      "table_name": "products",
+      "rows": 3,
+      "columns": 8,
+      "grain": "one virtual product",
+      "provenance": "synthetic_assumption",
+      "csv_file": "csv/products.csv"
+    },
+    {
+      "table_name": "vehicles",
+      "rows": 50,
+      "columns": 9,
+      "grain": "one hypothetical truck",
+      "provenance": "synthetic_assumption",
+      "csv_file": "csv/vehicles.csv"
+    },
+    {
+      "table_name": "scenario_days",
+      "rows": 365,
+      "columns": 4,
+      "grain": "one synthetic day",
+      "provenance": "synthetic_replay",
+      "csv_file": "csv/scenario_days.csv"
+    },
+    {
+      "table_name": "baseline_trips",
+      "rows": 2098,
+      "columns": 21,
+      "grain": "scenario day \u00d7 assigned truck",
+      "provenance": "synthetic_model",
+      "csv_file": "csv/baseline_trips.csv"
+    },
+    {
+      "table_name": "baseline_stops",
+      "rows": 24253,
+      "columns": 14,
+      "grain": "trip \u00d7 customer stop",
+      "provenance": "synthetic_model",
+      "csv_file": "csv/baseline_stops.csv"
+    },
+    {
+      "table_name": "orders",
+      "rows": 41595,
+      "columns": 10,
+      "grain": "day \u00d7 delivery stop \u00d7 product",
+      "provenance": "synthetic_model",
+      "csv_file": "csv/orders.csv"
+    },
+    {
+      "table_name": "inventory_batches",
+      "rows": 1089,
+      "columns": 6,
+      "grain": "generated replenishment batch",
+      "provenance": "synthetic_model",
+      "csv_file": "csv/inventory_batches.csv"
+    },
+    {
+      "table_name": "receipts",
+      "rows": 1086,
+      "columns": 8,
+      "grain": "day \u00d7 product receipt",
+      "provenance": "synthetic_model",
+      "csv_file": "csv/receipts.csv"
+    },
+    {
+      "table_name": "inventory_daily",
+      "rows": 1095,
+      "columns": 23,
+      "grain": "day \u00d7 product",
+      "provenance": "synthetic_model",
+      "csv_file": "csv/inventory_daily.csv"
+    },
+    {
+      "table_name": "suppliers",
+      "rows": 1,
+      "columns": 5,
+      "grain": "one virtual supplier",
+      "provenance": "synthetic_assumption",
+      "csv_file": "csv/suppliers.csv"
+    },
+    {
+      "table_name": "inbound_transport",
+      "rows": 362,
+      "columns": 9,
+      "grain": "supplier \u00d7 receipt day",
+      "provenance": "synthetic_model",
+      "csv_file": "csv/inbound_transport.csv"
+    },
+    {
+      "table_name": "hourly_inputs",
+      "rows": 8760,
+      "columns": 14,
+      "grain": "scenario hour",
+      "provenance": "mixed; see field_dictionary",
+      "csv_file": "csv/hourly_inputs.csv"
+    },
+    {
+      "table_name": "cold_storage_hourly",
+      "rows": 17520,
+      "columns": 22,
+      "grain": "scenario hour \u00d7 cold zone",
+      "provenance": "synthetic_model",
+      "csv_file": "csv/cold_storage_hourly.csv"
+    },
+    {
+      "table_name": "baseline_daily",
+      "rows": 365,
+      "columns": 30,
+      "grain": "scenario day",
+      "provenance": "synthetic_model",
+      "csv_file": "csv/baseline_daily.csv"
+    },
+    {
+      "table_name": "baseline_monthly",
+      "rows": 12,
+      "columns": 32,
+      "grain": "scenario month",
+      "provenance": "synthetic_model",
+      "csv_file": "csv/baseline_monthly.csv"
+    },
+    {
+      "table_name": "optimization_factors",
+      "rows": 10,
+      "columns": 7,
+      "grain": "one optimisation factor",
+      "provenance": "metadata",
+      "csv_file": "csv/optimization_factors.csv"
+    },
+    {
+      "table_name": "planning_constraints",
+      "rows": 10,
+      "columns": 2,
+      "grain": "one evaluation requirement",
+      "provenance": "metadata",
+      "csv_file": "csv/planning_constraints.csv"
+    },
+    {
+      "table_name": "table_catalog",
+      "rows": 29,
+      "columns": 6,
+      "grain": "one table",
+      "provenance": "metadata",
+      "csv_file": "csv/table_catalog.csv"
+    },
+    {
+      "table_name": "field_dictionary",
+      "rows": 347,
+      "columns": 7,
+      "grain": "one table column",
+      "provenance": "metadata",
+      "csv_file": "csv/field_dictionary.csv"
+    }
+  ],
+  "checks": {
+    "sqlite_integrity": true,
+    "foreign_keys": true,
+    "inventory_mass_balance": true,
+    "no_negative_inventory": true,
+    "warehouse_capacity": true,
+    "truck_capacity_feasible": true,
+    "truck_time_feasible": true,
+    "cold_power_feasible": true,
+    "thermal_energy_balance": true,
+    "monthly_reconciles": true,
+    "one_hourly_input_per_hour": true,
+    "no_missing_scenario_power": true
+  },
+  "source_coverage": [
+    {
+      "source_id": "vtt",
+      "file": "store_1_15.csv",
+      "records": 22191,
+      "start": "2017-10-20 09:15:00",
+      "end": "2018-06-08 12:45:00",
+      "note": "Original numeric units; overlapping hourly/15min versions must not be summed"
+    },
+    {
+      "source_id": "vtt",
+      "file": "store_1_60.csv",
+      "records": 5548,
+      "start": "2017-10-20 09:00:00",
+      "end": "2018-06-08 12:00:00",
+      "note": "Original numeric units; overlapping hourly/15min versions must not be summed"
+    },
+    {
+      "source_id": "vtt",
+      "file": "store_2_15.csv",
+      "records": 36770,
+      "start": "2017-05-17 15:00:00",
+      "end": "2018-06-04 15:15:00",
+      "note": "Original numeric units; overlapping hourly/15min versions must not be summed"
+    },
+    {
+      "source_id": "vtt",
+      "file": "store_2_60.csv",
+      "records": 9193,
+      "start": "2017-05-17 15:00:00",
+      "end": "2018-06-04 15:00:00",
+      "note": "Original numeric units; overlapping hourly/15min versions must not be summed"
+    },
+    {
+      "source_id": "multipack",
+      "file": "01_Research-data_Roma_August-2019.txt",
+      "records": 1439,
+      "start": "2019-08-12 00:01:37",
+      "end": "2019-08-12 23:59:37",
+      "note": "One sampled site profile; date parsed from records, not filename"
+    },
+    {
+      "source_id": "multipack",
+      "file": "02_Research-data_Roma_January-2019.txt",
+      "records": 1440,
+      "start": "2020-01-13 00:00:48",
+      "end": "2020-01-13 23:59:48",
+      "note": "One sampled site profile; date parsed from records, not filename"
+    },
+    {
+      "source_id": "multipack",
+      "file": "03_Research-data_Roma_September-2019.txt",
+      "records": 1440,
+      "start": "2019-09-11 00:00:33",
+      "end": "2019-09-12 00:00:33",
+      "note": "One sampled site profile; date parsed from records, not filename"
+    },
+    {
+      "source_id": "multipack",
+      "file": "04_Research-data_Trento_August-2019.txt",
+      "records": 1438,
+      "start": "2019-08-12 00:01:37",
+      "end": "2019-08-12 23:58:37",
+      "note": "One sampled site profile; date parsed from records, not filename"
+    },
+    {
+      "source_id": "multipack",
+      "file": "05_Research-data_Trento_January-2019.txt",
+      "records": 1439,
+      "start": "2020-01-13 00:00:56",
+      "end": "2020-01-13 23:58:56",
+      "note": "One sampled site profile; date parsed from records, not filename"
+    },
+    {
+      "source_id": "multipack",
+      "file": "06_Research-data_Trento_September-2019.txt",
+      "records": 1438,
+      "start": "2019-09-11 00:00:56",
+      "end": "2019-09-11 23:59:56",
+      "note": "One sampled site profile; date parsed from records, not filename"
+    },
+    {
+      "source_id": "ornl",
+      "file": "BaselineTestA.csv",
+      "records": 81204,
+      "start": "2019-11-05 00:00:00",
+      "end": "2019-11-05 23:59:59",
+      "note": "Real experiment; minute means in database; all raw columns in archive"
+    },
+    {
+      "source_id": "ornl",
+      "file": "BaselineTestB.csv",
+      "records": 81341,
+      "start": "2019-07-13 00:00:00",
+      "end": "2019-07-13 23:59:59",
+      "note": "Real experiment; minute means in database; all raw columns in archive"
+    },
+    {
+      "source_id": "ornl",
+      "file": "BaselineTestC.csv",
+      "records": 81274,
+      "start": "2019-08-06 00:00:00",
+      "end": "2019-08-06 23:59:58",
+      "note": "Real experiment; minute means in database; all raw columns in archive"
+    },
+    {
+      "source_id": "ornl",
+      "file": "BaselineTestD.csv",
+      "records": 81363,
+      "start": "2019-11-09 00:00:00",
+      "end": "2019-11-09 23:59:59",
+      "note": "Real experiment; minute means in database; all raw columns in archive"
+    },
+    {
+      "source_id": "ornl",
+      "file": "BaselineTestE.csv",
+      "records": 81249,
+      "start": "2019-10-26 00:00:00",
+      "end": "2019-10-26 23:59:59",
+      "note": "Real experiment; minute means in database; all raw columns in archive"
+    },
+    {
+      "source_id": "ornl",
+      "file": "Fault1_DisplayCaseDoorOpen.csv",
+      "records": 81234,
+      "start": "2019-10-29 00:00:00",
+      "end": "2019-10-29 23:59:59",
+      "note": "Real experiment; minute means in database; all raw columns in archive"
+    },
+    {
+      "source_id": "ornl",
+      "file": "Fault2_IceAccumulation.csv",
+      "records": 26395,
+      "start": "2019-07-20 00:00:00",
+      "end": "2019-07-20 23:59:00",
+      "note": "Real experiment; minute means in database; all raw columns in archive"
+    },
+    {
+      "source_id": "ornl",
+      "file": "Fault3_EvapValveFailure.csv",
+      "records": 81280,
+      "start": "2019-08-11 00:00:00",
+      "end": "2019-08-11 23:59:00",
+      "note": "Real experiment; minute means in database; all raw columns in archive"
+    },
+    {
+      "source_id": "ornl",
+      "file": "Fault4_MTEvapFanFailure.csv",
+      "records": 81238,
+      "start": "2019-11-08 00:00:00",
+      "end": "2019-11-08 23:59:59",
+      "note": "Real experiment; minute means in database; all raw columns in archive"
+    },
+    {
+      "source_id": "ornl",
+      "file": "Fault5_CondAPBlock.csv",
+      "records": 81094,
+      "start": "2019-10-21 00:00:00",
+      "end": "2019-10-21 23:59:59",
+      "note": "Real experiment; minute means in database; all raw columns in archive"
+    },
+    {
+      "source_id": "ornl",
+      "file": "Fault6_MTEvapAPBlock.csv",
+      "records": 81237,
+      "start": "2019-10-24 00:00:00",
+      "end": "2019-10-24 23:59:59",
+      "note": "Real experiment; minute means in database; all raw columns in archive"
+    },
+    {
+      "source_id": "ncst",
+      "file": "BETVRPB1.csv",
+      "records": 48,
+      "start": null,
+      "end": null,
+      "note": "Nodes including depot; one constructed daily case; no calendar date assigned by provider"
+    },
+    {
+      "source_id": "ncst",
+      "file": "BETVRPB2.csv",
+      "records": 59,
+      "start": null,
+      "end": null,
+      "note": "Nodes including depot; one constructed daily case; no calendar date assigned by provider"
+    },
+    {
+      "source_id": "ncst",
+      "file": "BETVRPB3.csv",
+      "records": 72,
+      "start": null,
+      "end": null,
+      "note": "Nodes including depot; one constructed daily case; no calendar date assigned by provider"
+    },
+    {
+      "source_id": "ncst",
+      "file": "BETVRPB4.csv",
+      "records": 91,
+      "start": null,
+      "end": null,
+      "note": "Nodes including depot; one constructed daily case; no calendar date assigned by provider"
+    }
+  ],
+  "profile_methods": {
+    "source_observation_replayed": 7989,
+    "imputed_past_same_hour_median": 659,
+    "imputed_forward_fill_max_6h": 112
+  },
+  "composition": {
+    "scope_tables": [
+      "hourly_inputs",
+      "cold_storage_hourly",
+      "orders",
+      "baseline_trips",
+      "inventory_daily"
+    ],
+    "denominator": "non-null numeric analytical cells; metadata excluded; no claims about physical reality from row fractions",
+    "nonnull_cells": 531980,
+    "by_category": {
+      "measured_field_replayed": {
+        "cells": 7989,
+        "percent": 1.501748186022031
+      },
+      "mixed_replay_or_imputation": {
+        "cells": 8760,
+        "percent": 1.6466784465581412
+      },
+      "synthetic_assumption": {
+        "cells": 35040,
+        "percent": 6.586713786232565
+      },
+      "synthetic_model": {
+        "cells": 480191,
+        "percent": 90.26485958118727
+      }
+    }
+  },
+  "fingrid_status": "not downloaded; HTTP 401; synthetic grid profile is active",
+  "savings_status": "not evaluated; database and feasible baseline only",
+  "build_utc": "2026-11-01T04:27:20.642557+00:00"
+}

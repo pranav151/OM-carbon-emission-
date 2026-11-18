@@ -1,0 +1,5 @@
+policy,thermal_residual_c,temperature_or_power_violations,terminal_temperature_error_c
+baseline,1.7763568394002506e-16,0,0.0
+combined,3.552713678800501e-15,0,0.0
+storage,3.552713678800501e-15,0,0.0
+transport,1.7763568394002506e-16,0,0.0
